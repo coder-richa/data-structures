@@ -82,6 +82,26 @@ class LinkedList {
             this.tail.next = null;
         }
     }
+    // function to remove node from the position of the linked list
+    removeNode(position) {
+        // check if the list is empty
+        if (position == 1) {
+            // Remove node to the head
+            this.removeFromHead();
+            return true;
+        }
+        // fetch node at given position
+        let currentNode = this.getNode(position);
+        // check if element exists at the given location
+        if (currentNode == null) {
+            // Position is out of range
+            return false;
+        }
+        // Update node pointers
+        currentNode.prev.next = currentNode.next;
+        currentNode.next.prev = currentNode.prev;
+        return true;
+    }
     // function to retrieve  first node with matching data in the linked list
     search(data) {
         // check if the list is empty
