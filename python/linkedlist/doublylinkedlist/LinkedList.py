@@ -83,6 +83,27 @@ class LinkedList:
             self.tail.next = None
     
     
+    #  method to remove node from the given position of the linked list
+    def removeNode(self,position) ->bool :
+        #  check if the list is empty
+        if position == 1 :
+            # Remove node from the head
+            self.removeFromHead()
+            return True
+        
+        # fetch node at given position
+        currentNode = self.getNode(position)
+        # check if element exists at the given location
+        if currentNode is None :
+            # Position is out of range
+            return False
+        
+        # Update node pointers
+        currentNode.prev.next = currentNode.next
+        currentNode.next.prev = currentNode.prev
+        return True
+            
+            
     # method to retrieve  first node with matching data in the linked list
     def search(self,data)-> Node:
         # check if the list is empty

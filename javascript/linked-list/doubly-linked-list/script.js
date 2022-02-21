@@ -31,3 +31,6 @@ console.log("Print all nodes");
 console.log(...ll.printNodeValue());
 console.log("Get all nodes with value 20");
 console.log(ll.indexOf(20));
+console.log("Remove 2nd node", ll.removeNode(2));
+console.log("Print all nodes");
+console.log(...ll.printNodeValue());

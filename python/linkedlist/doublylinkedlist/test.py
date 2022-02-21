@@ -42,4 +42,6 @@ print("Print all nodes")
 ll.printNodeValue()
 print("Get all nodes with value 10")
 print(ll.indexOf(10))
-                                                         
+print("Remove node at position: 2",ll.removeNode(2))
+print("Print all nodes")  
+ll.printNodeValue()                                                         
